@@ -1,17 +1,17 @@
 name: Email Echo Action
 
 on:
-  push:
+  workflow_dispatch:  # Allows manual trigger from Actions tab
+  push:               # Also runs on push to main
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 24f2006969@ds.study.iitm.ac.in
+      - name: 24f2006969@ds.study.iitm.ac.in  # ✅ Display email as step name
         run: echo "Hello, world!"
